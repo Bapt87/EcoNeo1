@@ -1,0 +1,302 @@
+nav {
+    display: flex; /* Affiche les liens côte à côte */
+    justify-content: center; /* Centre la barre de navigation horizontalement */
+    gap: 30px; /* Espacement entre les liens */
+    padding: 10px 0; /* Ajoute de l'espace en haut et en bas */
+    background-color: #f8f8f8; /* Couleur d'arrière-plan (modifiable) */
+}
+
+nav a {
+    text-decoration: none; /* Enlève le soulignement par défaut */
+    font-size: 16px; /* Taille du texte */
+    color: #333; /* Couleur du texte */
+    position: relative; /* Nécessaire pour l'effet de survol */
+    padding: 5px 10px; /* Ajoute de l'espace autour du texte */
+    transition: color 0.3s ease; /* Transition douce pour la couleur */
+}
+
+nav a:hover {
+    color: #006400; /* Change la couleur du texte au survol */
+}
+
+nav a::after {
+    content: ""; /* Crée un pseudo-élément vide */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px; /* Épaisseur de la barre */
+    background-color: #006400; /* Couleur de la barre */
+    transform: scaleX(0); /* Barre invisible par défaut */
+    transform-origin: left; /* Animation commence depuis la gauche */
+    transition: transform 0.3s ease; /* Animation fluide */
+}
+
+nav a:hover::after {
+    transform: scaleX(1); /* Barre devient visible au survol */
+}
+
+body {
+    background-color: rgb(245, 245, 245)
+}
+main {
+    Text-align: center;
+}
+
+h1 {
+    font-size: 80px; /* Taille du texte */
+    color: rgb(0,100,0); /*couleur du texte*/
+    text-align: center; /* Centre le titre */
+    margin: 20px; /* Espace autour du titre */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: white;
+    background-color: darkgreen;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animation sur la couleur et l'échelle */
+}
+
+.button:hover {
+    background-color: limegreen; /* Change la couleur de fond au survol */
+    transform: scale(1.1); /* Agrandit légèrement le bouton */
+}
+
+.titreimagearticle {
+    color: darkgreen;
+    text-align: center;
+    font-size: 20px; /* Définit la taille du texte */
+}
+
+.imagearticle {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+    gap: 20px; /* Espace entre les colonnes et les lignes */
+    margin: 20px;
+}
+
+section a {
+    text-align: center; /* Centrer le texte sous l'image */
+    color: inherit; /* Garder la couleur du texte par défaut */
+}
+
+section img {
+    width: 300px; /* Largeur fixe */
+    height: 200px; /* Hauteur fixe */
+    object-fit: cover; /* Recadre les images pour remplir les dimensions */
+    border-radius: 8px; /* Coins légèrement arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour un effet esthétique */
+    transition: transform 0.2s ease; /* Animation pour effet au survol */
+}
+
+section img:hover {
+    transform: scale(1.05); /* Agrandit légèrement l'image au survol */
+}
+
+section h3 {
+    margin-top: 10px;
+    font-size: 16px; /* Taille de texte sous l'image */
+}
+
+footer {
+    display: flex; /* Affiche les éléments en ligne */
+    justify-content: space-around; /* Espace uniforme entre les éléments */
+    align-items: center; /* Aligne les éléments verticalement au centre */
+    background-color: black; /* Couleur d'arrière-plan du footer */
+    padding: 10px 20px; /* Espace interne autour des éléments */
+    border-top: 1px solid #ccc; /* Ligne en haut du footer */
+}
+
+footer p {
+    margin: 0; /* Enlève les marges par défaut des paragraphes */
+    font-size: 14px; /* Taille du texte */
+    color: #fefcfc; /* Couleur du texte */
+    cursor: pointer; /* Ajoute un effet de pointeur pour l'interaction */
+}
+
+.imagerepasdelasemaine {
+    width: 100px;
+    height: 100px;
+    object-fit: cover; /* Maintient les proportions en remplissant le conteneur */
+}
+
+.centrerlecalendrier{
+    display: flex; /* Active Flexbox */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    margin: 0; /* Supprime les marges par défaut */
+    background-color: #f0f0f0; /* Ajoute une couleur de fond (facultatif) */
+}
+
+.calendar {
+    width: 500px;
+    background: rgb(245, 245, 245);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.month {
+    background: #006400;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.days, .dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day, .date {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.day {
+    background: #f8f8f8;
+    font-weight: bold;
+}
+
+.date {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.date:hover {
+    background-color: #32CD32;
+    color: white;
+}
+
+.date.empty {
+    background: transparent;
+    border: none;
+}
+
+table {
+    display: flex; /* Active Flexbox */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    margin: 0; /* Supprime les marges par défaut */
+}
+
+td, th {
+    padding: 10px;
+}
+
+#imagecafet {
+    object-fit: cover;
+    width: 1500px; 
+    height: 300px;
+}
+
+.pagelearnmore {
+    text-align: left;
+}
+
+.titreh2 {
+    color: rgb(0,100,0);
+}
+
+/*css pour le formulaire sur la page leaveopinion.html et sur la page orderfood.html*/
+
+/* Styles généraux pour le formulaire */
+form {
+    width: 50%;
+    margin: 20px auto; /* Centre le formulaire sur la page */
+    background-color: #f8f8f8; /* Couleur de fond claire */
+    border: 2px solid #006400; /* Bordure verte foncée */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    font-family: Arial, sans-serif;
+}
+
+/* Légende (titre du formulaire) */
+legend {
+    font-size: 20px;
+    font-weight: bold;
+    color: #006400; /* Texte vert foncé */
+    text-align: center;
+}
+
+/* Styles des labels */
+label {
+    display: block; /* Chaque label sur une ligne séparée */
+    font-size: 14px;
+    font-weight: bold;
+    color: #006400; /* Texte vert foncé */
+    margin-bottom: 5px;
+}
+
+/* Champs de saisie */
+input[type="text"], input[type="mail"], select {
+    width: 100%; /* Champs de saisie prennent toute la largeur */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #006400; /* Bordure verte */
+    border-radius: 5px;
+    background-color: #fff; /* Fond blanc */
+    color: #333; /* Couleur du texte */
+    box-sizing: border-box; /* Inclut le padding dans la largeur */
+    font-size: 14px;
+}
+
+/* Effet au survol des champs */
+input[type="text"]:hover, input[type="mail"]:hover, select:hover {
+    border-color: #32CD32; /* Bordure verte claire au survol */
+    background-color: #f0fff0; /* Fond vert très clair */
+}
+
+/* Boutons radio */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Bouton d'envoi */
+input[type="submit"] {
+    background-color: #006400; /* Fond vert foncé */
+    color: white; /* Texte blanc */
+    border: none; /* Pas de bordure */
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Effet au survol du bouton */
+input[type="submit"]:hover {
+    background-color: #32CD32; /* Fond vert clair au survol */
+}
+
+/* Ajustements pour les groupes (fieldset) */
+fieldset {
+    border: 1px solid #006400; /* Bordure verte */
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #fff; /* Fond blanc */
+}
+
+/* Espacement entre les options de sélection */
+select {
+    margin-bottom: 20px;
+}
+
+/* Ajustements pour le texte des remarques */
+input[type="text"][placeholder="comments or remark"] {
+    height: 80px; /* Augmente la hauteur pour les remarques */
+}
